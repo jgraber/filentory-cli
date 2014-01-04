@@ -1,4 +1,4 @@
-# Inventory
+# Inventory [![Build Status](https://travis-ci.org/jgraber/inventory.cli.png?branch=master)](https://travis-ci.org/jgraber/inventory.cli)
 
 TODO: Write a gem description
 
