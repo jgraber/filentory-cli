@@ -20,4 +20,5 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency('aruba')
   gem.add_development_dependency('rake', '~> 10.1.1')
   gem.add_dependency('methadone', '~> 1.3.1')
+  gem.add_dependency('oj', '~> 2.5.3')
 end
