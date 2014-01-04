@@ -8,7 +8,10 @@ class App
   include Methadone::Main
   include Methadone::CLILogging
 
-  main do # Add args you want: |like,so|
+  main do |name, server| # Add args you want: |like,so|
+    info("name: #{name}")
+    info "server: #{server}"
+    info "type: #{options[:type]}"
     # your program code here
     # You can access CLI options via
     # the options Hash
@@ -18,21 +21,14 @@ class App
 
   # Declare command-line interface here
 
-  # description "one line description of your app"
-  #
-  # Accept flags via:
+  description "A tool to create an inventory of a storage medium"
+  
+  # Options:
   on("-t TYPE", "--type TYPE", "The type of the media to add to the inventory")
-  # on("--flag VAL","Some flag")
-  # options[flag] will contain VAL
-  #
-  # Specify switches via:
-  # on("--[no-]switch","Some switch")
-  #
-  # Or, just call OptionParser methods on opts
-  #
-  # Require an argument
-  arg :name
-  arg :server, :optional 
+
+  # Arguments of Inventory
+  arg :name # required argument
+  arg :server, :optional # optional argument
   #
   # # Make an argument optional
   # arg :optional_arg, :optional
