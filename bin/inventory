@@ -21,6 +21,7 @@ class App
   # description "one line description of your app"
   #
   # Accept flags via:
+  on("-t TYPE", "--type TYPE", "The type of the media to add to the inventory")
   # on("--flag VAL","Some flag")
   # options[flag] will contain VAL
   #
@@ -30,7 +31,8 @@ class App
   # Or, just call OptionParser methods on opts
   #
   # Require an argument
-  # arg :some_arg 
+  arg :name
+  arg :server, :optional 
   #
   # # Make an argument optional
   # arg :optional_arg, :optional
