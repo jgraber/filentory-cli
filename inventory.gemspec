@@ -18,6 +18,6 @@ Gem::Specification.new do |gem|
   gem.require_paths = ["lib"]
   gem.add_development_dependency('rdoc')
   gem.add_development_dependency('aruba')
-  gem.add_development_dependency('rake', '~> 0.9.2')
+  gem.add_development_dependency('rake', '~> 10.1.1')
   gem.add_dependency('methadone', '~> 1.3.1')
 end
