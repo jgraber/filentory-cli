@@ -38,6 +38,14 @@ class TestFileEntry < Test::Unit::TestCase
     assert_equal(json_compact.strip, json)
   end
 
+  def test_to_s_is_readable
+    fe = FileEntry.new("/media/","a name")
+    fe.last_modified = DateTime.iso8601("2014-01-04T21:06:04+01:00")
+    fe.size = 100
+
+    assert_equal("/media/a name (100) - 2014-01-04T21:06:04+01:00",fe.to_s)
+  end
+
 
   private
   def json_compact

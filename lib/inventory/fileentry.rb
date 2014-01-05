@@ -1,5 +1,5 @@
 class FileEntry
-  attr_accessor :path, :name, :checksum
+  attr_accessor :path, :name, :checksum, :size
 
   def initialize(path, name)
     @path = path
@@ -12,5 +12,9 @@ class FileEntry
 
   def last_modified
     DateTime.iso8601(@last_modified)
+  end
+
+  def to_s
+    @path + @name + " (" + @size.to_s + ") - " + @last_modified
   end
 end
