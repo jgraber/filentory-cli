@@ -16,3 +16,12 @@ Feature: My bootstrapped app kinda works
       |name||
       |path||
       |server|optional|
+
+  Scenario: App prints JSON
+    When I run "inventory" for the test data
+    Then I should get JSON as output
+    And the JSON response at "name" should be "testrun"
+    And the JSON response at "type" should be "DVD"
+    And the JSON at "files/0" should have 2 entries
+    And the JSON at "files/0/0/name" should be "fileA.txt"
+    And the JSON at "files/0/1/name" should be "fileB.txt"

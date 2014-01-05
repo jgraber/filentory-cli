@@ -15,7 +15,12 @@ class App
     info "server: #{server}"
     info "type: #{options[:type]}"
 
+    data_store = Datastore.new (name)
+    data_store.type = options[:type]
+    collector = Collector.new
+    data_store.files << collector.collect(absolute_path)
 
+    puts data_store.to_json
     # your program code here
     # You can access CLI options via
     # the options Hash

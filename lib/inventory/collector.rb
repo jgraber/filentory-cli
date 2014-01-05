@@ -1,5 +1,5 @@
 require 'find'
-require "digest"
+require 'digest'
 
 class Collector
 
