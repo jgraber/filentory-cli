@@ -14,4 +14,5 @@ Feature: My bootstrapped app kinda works
       |--type|
     And the banner should document that this app's arguments are:
       |name||
+      |path||
       |server|optional|
