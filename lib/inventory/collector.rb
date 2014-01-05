@@ -1,5 +1,5 @@
 require 'find'
-#require 'file'
+require "digest"
 
 class Collector
 
@@ -23,7 +23,8 @@ class Collector
     entry = FileEntry.new(directory_name, file_name)
     entry.last_modified= File.atime(file_path)
     entry.size = File.size(file_path)
-    puts entry
+    entry.checksum = Digest::SHA2.file(file_path).hexdigest
+
     entry
   end
 end
