@@ -1,6 +1,6 @@
 require 'find'
 require 'digest'
-#require 'methadone/cli_logger'
+require 'pathname'
 require 'methadone'
 
 class Collector
@@ -8,6 +8,7 @@ class Collector
 
   def collect(path)
     result = Array.new
+    @pathname = Pathname.new(path)
 
     Find.find(path) do |file|
       if File.directory?(file)
@@ -23,7 +24,7 @@ class Collector
 
   private
   def extract_file_infos(file_path)
-    directory_name = File.dirname(file_path)
+    directory_name = create_relative_path(file_path)
     file_name = File.basename(file_path)
 
     begin
@@ -35,5 +36,11 @@ class Collector
       error ("error with file '#{file_path}': #{file_error}")
     end
     entry
+  end
+
+  def create_relative_path(file_path)
+    pathname_for_file = Pathname.new(file_path)
+    relative_path = pathname_for_file.relative_path_from(@pathname)
+    relative_path.dirname.to_s
   end
 end
