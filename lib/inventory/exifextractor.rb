@@ -34,8 +34,8 @@ class ExifExtractor
   def extract_exif_main_meta_data(img, xmpValues)
     xmpValues["exif.model"] =  img.model
     xmpValues["exif.artist"] = img.artist
-    xmpValues["exif.date_time"] = img.date_time
-    xmpValues["exif.date_time_original"] = img.date_time_original
+    xmpValues["exif.date_time"] = format_date(img.date_time)
+    xmpValues["exif.date_time_original"] = format_date(img.date_time_original)
     xmpValues["exif.width"] = img.width
     xmpValues["exif.height"] = img.height
   end
@@ -47,5 +47,9 @@ class ExifExtractor
       xmpValues["exif.gps.longitude"] = img.gps.longitude
       xmpValues["exif.gps.altitude"] = img.gps.altitude
     end
+  end
+
+  def format_date(date)
+    date.strftime("%FT%T%:z") unless date.nil?
   end
 end
