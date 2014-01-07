@@ -1,5 +1,5 @@
 class FileEntry
-  attr_accessor :path, :name, :checksum, :size
+  attr_accessor :path, :name, :checksum, :size, :metadata
 
   def initialize(path, name)
     @path = path
