@@ -50,6 +50,6 @@ class ExifExtractor
   end
 
   def format_date(date)
-    date.utc.strftime("%FT%T%:z") unless date.nil?
+    date.strftime("%FT%T+00:00") unless date.nil?
   end
 end
