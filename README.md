@@ -1,6 +1,6 @@
 # Inventory [![Build Status](https://travis-ci.org/jgraber/inventory.cli.png?branch=master)](https://travis-ci.org/jgraber/inventory.cli) [![Code Climate](https://codeclimate.com/github/jgraber/inventory.cli.png)](https://codeclimate.com/github/jgraber/inventory.cli)
 
-TODO: Write a gem description
+A tool to create an inventory of a storage medium.
 
 ## Installation
 
