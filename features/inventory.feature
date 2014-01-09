@@ -27,5 +27,8 @@ Feature: My bootstrapped app kinda works
     And the JSON at "files/0/0/path" should be "."
     And the JSON at "files/0/1/name" should be "fileB.txt"
     And the JSON at "files/0/1/path" should be "folder"
+    And the JSON at "files/0/1/path" should be "folder"
+    And the JSON at "files/0/2/metadata" should be a hash
+    And the JSON at "files/0/2/metadata" should have 6 entries
     And the JSON at "files/0/2/metadata/exif.artist" should be "Johnny Graber"
     And the JSON at "files/0/2/metadata/exif.date_time" should be "2013-11-02T18:10:43+00:00"
