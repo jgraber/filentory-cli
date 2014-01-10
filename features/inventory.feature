@@ -22,7 +22,7 @@ Feature: My bootstrapped app kinda works
     Then I should get JSON as output
     And the JSON response at "name" should be "testrun"
     And the JSON response at "type" should be "DVD"
-    And the JSON at "files/0" should have 3 entries
+    And the JSON at "files/0" should have 4 entries
     And the JSON at "files/0/0/name" should be "fileA.txt"
     And the JSON at "files/0/0/path" should be "."
     And the JSON at "files/0/1/name" should be "fileB.txt"
