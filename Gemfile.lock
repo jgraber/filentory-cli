@@ -6,6 +6,7 @@ PATH
       json_spec (~> 1.1.1)
       methadone (~> 1.3.1)
       oj (~> 2.5.3)
+      streamio-ffmpeg (~> 1.0.0)
       xmp (~> 0.2.0)
 
 GEM
@@ -50,6 +51,7 @@ GEM
     rspec-expectations (2.14.4)
       diff-lcs (>= 1.1.3, < 2.0)
     rspec-mocks (2.14.4)
+    streamio-ffmpeg (1.0.0)
     xmp (0.2.0)
       nokogiri (~> 1.5.0)
 

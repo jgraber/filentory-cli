@@ -50,5 +50,11 @@ class Collector
       extractor = ExifExtractor.new
       entry.metadata = extractor.metadata_for_file(file_path)
     end
+    
+    if file_path.downcase.end_with? ".avi" or file_path.downcase.end_with? ".mov" or file_path.downcase.end_with? ".mpg" or file_path.downcase.end_with? ".mp4"
+      extractor = VideoExtractor.new
+      entry.metadata = extractor.metadata_for_file(file_path)
+    end
+
   end
 end

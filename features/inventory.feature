@@ -32,3 +32,5 @@ Feature: My bootstrapped app kinda works
     And the JSON at "files/0/2/metadata" should have 6 entries
     And the JSON at "files/0/2/metadata/exif.artist" should be "Johnny Graber"
     And the JSON at "files/0/2/metadata/exif.date_time" should be "2013-11-02T18:10:43+00:00"
+    And the JSON at "files/0/3/metadata" should be a hash
+    And the JSON at "files/0/3/metadata/audio_codec" should be "aac"
