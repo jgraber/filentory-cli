@@ -3,8 +3,10 @@ before_script: "sudo apt-get install -qq ffmpeg"
 rvm:
   - 2.0.0
   - 1.9.3
-  - allow_failures:
-    - 2.1.0
+  - 2.1.0
+  - jruby-head
+  - jruby-19mode
+  - rbx-19mode
 matrix:
   allow_failures:
     - rvm: 2.1.0
