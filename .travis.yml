@@ -1,4 +1,9 @@
-nguage: ruby
+language: ruby
+before_script: "sudo apt-get install -qq ffmpeg"
 rvm:
   - 2.0.0
   - 1.9.3
+matrix:
+  allow_failures:
+    - rvm: - 2.1.0
+    - jruby-head
