@@ -29,7 +29,7 @@ class Collector
 
     begin
       entry = FileEntry.new(directory_name, file_name)
-      entry.last_modified= File.atime(file_path)
+      entry.last_modified= File.mtime(file_path)
       entry.size = File.size(file_path)
       entry.checksum = Digest::SHA2.file(file_path).hexdigest
       collect_metadata(entry, file_path)
