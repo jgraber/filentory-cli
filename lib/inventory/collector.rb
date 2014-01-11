@@ -46,12 +46,14 @@ class Collector
   end
 
   def collect_metadata(entry, file_path)
-    if file_path.downcase.end_with? ".jpg" or file_path.downcase.end_with? ".jpeg"
+    extension = File.extname(file_path).downcase
+
+    if ExifExtractor.handles? extension
       extractor = ExifExtractor.new
       entry.metadata = extractor.metadata_for_file(file_path)
     end
     
-    if file_path.downcase.end_with? ".avi" or file_path.downcase.end_with? ".mov" or file_path.downcase.end_with? ".mpg" or file_path.downcase.end_with? ".mp4"
+    if VideoExtractor.handles? extension
       extractor = VideoExtractor.new
       entry.metadata = extractor.metadata_for_file(file_path)
     end

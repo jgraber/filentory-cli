@@ -13,4 +13,12 @@ class TestExifExtractor < Test::Unit::TestCase
     assert_nil metadata["rdf.about"]
   end
 
+  def test_can_handle_jpg
+    assert(ExifExtractor.handles?(".jpg"), "ExifExtractor should handle .jpg")
+  end
+  
+  def test_can_not_handle_avi
+    assert(!ExifExtractor.handles?(".avi"), "ExifExtractor should responde false for .avi")
+  end
+
 end

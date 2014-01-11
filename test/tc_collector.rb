@@ -33,4 +33,30 @@ class TestCollector < Test::Unit::TestCase
     assert_equal(".", pn.relative_path_from(porig).dirname.to_s)
     assert_equal("fileA", pn.relative_path_from(porig).basename.to_s)
   end
+
+  def test_file_extension_for_files_without_extension
+    extension = File.extname("/test/integration/data/fileA")
+    assert_equal("", extension)
+  end
+
+  def test_file_extension_for_a_directory_path
+    extension = File.extname("/test/integration/data/fileA/")
+    assert_equal("", extension)
+  end
+
+  def test_file_extension_for_files_in_uppercase
+    extension = File.extname("FILE.TXT")
+    assert_equal(".TXT", extension)
+  end
+
+  def test_file_extension_for_files_in_lowercase
+    extension = File.extname("file.txt")
+    assert_equal(".txt", extension)
+  end
+
+  def test_file_extension_for_files_in_mixedcase
+    extension = File.extname("fIlE.tXt")
+    assert_equal(".tXt", extension)
+  end
+
 end

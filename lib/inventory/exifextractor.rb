@@ -17,6 +17,10 @@ class ExifExtractor
     Hash.new
   end
 
+  def self.handles?(file_extension)
+    [".jpg", ".jpeg", ".tiff"].include? file_extension
+  end
+
   private
   def extract_xmp_meta_data(img, xmpValues)
     xmp = XMP.parse(img)

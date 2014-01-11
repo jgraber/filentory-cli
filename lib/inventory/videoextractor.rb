@@ -9,8 +9,12 @@ class VideoExtractor
     
     methods = define_fields
     methods.each{|m| result[m] = movie.send(m)}
-    
+
     result.delete_if { |k, v| v.nil? || v.to_s.empty?}
+  end
+
+  def self.handles?(file_extension)
+    [".avi", ".mpeg", ".mov", ".mp4", ".flv"].include? file_extension
   end
 
   private
@@ -31,7 +35,8 @@ class VideoExtractor
      "video_codec",
      "video_stream",
      "width",
-     "height"]
+     "height",
+     "valid?"]
   end
 
 end
