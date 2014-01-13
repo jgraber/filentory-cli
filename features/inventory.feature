@@ -20,17 +20,11 @@ Feature: My bootstrapped app kinda works
   Scenario: App prints JSON
     When I run "inventory" for the test data
     Then I should get JSON as output
-    And the JSON response at "name" should be "testrun"
-    And the JSON response at "type" should be "DVD"
-    And the JSON at "files/0" should have 4 entries
-    And the JSON at "files/0/0/name" should be "fileA.txt"
-    And the JSON at "files/0/0/path" should be "."
-    And the JSON at "files/0/1/name" should be "fileB.txt"
-    And the JSON at "files/0/1/path" should be "folder"
-    And the JSON at "files/0/1/path" should be "folder"
-    And the JSON at "files/0/2/metadata" should be a hash
-    And the JSON at "files/0/2/metadata" should have 6 entries
-    And the JSON at "files/0/2/metadata/exif.artist" should be "Johnny Graber"
-    And the JSON at "files/0/2/metadata/exif.date_time" should be "2013-11-02T18:10:43+00:00"
-    And the JSON at "files/0/3/metadata" should be a hash
-    And the JSON at "files/0/3/metadata/audio_codec" should be "aac"
+    And the "name" should be "testrun"
+    And the "type" should be "DVD"
+    And there should be 4 entries in "files"
+    And the first file should be placed in the root folder
+    And the second file should be in the "folder"
+    And the image file should have metadata
+    And the video file should have metadata
+    
