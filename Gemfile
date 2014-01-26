@@ -1,4 +1,4 @@
 source 'https://rubygems.org'
 
-# Specify your gem's dependencies in inventory.gemspec
+# Specify your gem's dependencies in filentory-cli.gemspec
 gemspec

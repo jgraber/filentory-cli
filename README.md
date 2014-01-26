@@ -1,12 +1,12 @@
-# Inventory [![Build Status](https://travis-ci.org/jgraber/inventory.cli.png?branch=master)](https://travis-ci.org/jgraber/inventory.cli) [![Code Climate](https://codeclimate.com/github/jgraber/inventory.cli.png)](https://codeclimate.com/github/jgraber/inventory.cli)
+# Filentory-cli [![Build Status](https://travis-ci.org/jgraber/filentory-cli.png?branch=master)](https://travis-ci.org/jgraber/filentory-cli) [![Code Climate](https://codeclimate.com/github/jgraber/filentory-cli.png)](https://codeclimate.com/github/jgraber/filentory-cli)
 
-A tool to create an inventory of a storage medium.
+A tool to create an filentory-cli of a storage medium.
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
-    gem 'inventory'
+    gem 'filentory-cli'
 
 And then execute:
 
@@ -14,7 +14,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install inventory
+    $ gem install filentory-cli
 
 ## Usage
 

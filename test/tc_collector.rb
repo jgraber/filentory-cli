@@ -1,6 +1,6 @@
 require 'test/unit'
 require 'pathname'
-require 'inventory/collector'
+require 'filentory/collector'
 
 class TestCollector < Test::Unit::TestCase
 

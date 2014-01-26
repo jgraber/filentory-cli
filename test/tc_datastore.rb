@@ -1,5 +1,5 @@
 require 'test/unit'
-require 'inventory/datastore'
+require 'filentory/datastore'
 
 class TestDatastore < Test::Unit::TestCase
   def test_initialisation_with_a_name 

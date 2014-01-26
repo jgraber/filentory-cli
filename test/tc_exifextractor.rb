@@ -1,6 +1,6 @@
 require 'test/unit'
 require 'pathname'
-require 'inventory/exifextractor'
+require 'filentory/exifextractor'
 
 class TestExifExtractor < Test::Unit::TestCase
 

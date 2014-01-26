@@ -4,7 +4,7 @@ Feature: My bootstrapped app kinda works
   So I don't have to do it myself
 
   Scenario: App just runs
-    When I get help for "inventory"
+    When I get help for "filentory-cli"
     Then the exit status should be 0
     And the banner should be present
     And there should be a one line summary of what the app does
@@ -18,7 +18,7 @@ Feature: My bootstrapped app kinda works
       |server|optional|
 
   Scenario: App prints JSON
-    When I run "inventory" for the test data
+    When I run "filentory-cli" for the test data
     Then I should get JSON as output
     And the "name" should be "testrun"
     And the "type" should be "DVD"

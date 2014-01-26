@@ -1,6 +1,6 @@
 # Put your step definitions here
 When(/^I run "(.*?)" for the test data$/) do |arg1|
-  @output = `inventory "testrun" test/integration/data -t DVD --log-level fatal`
+  @output = `filentory-cli "testrun" test/integration/data -t DVD --log-level fatal`
 end
 
 Then(/^I should get JSON as output$/) do

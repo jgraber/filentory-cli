@@ -1,6 +1,6 @@
 require 'test/unit'
 require 'pathname'
-require 'inventory/videoextractor'
+require 'filentory/videoextractor'
 
 class TestVideoExtractor < Test::Unit::TestCase
 

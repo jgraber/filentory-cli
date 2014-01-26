@@ -1,7 +1,7 @@
 require 'test/unit'
 require 'date'
 require 'oj'
-require 'inventory/fileentry'
+require 'filentory/fileentry'
 
 
 class TestFileEntry < Test::Unit::TestCase

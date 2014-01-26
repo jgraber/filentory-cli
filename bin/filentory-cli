@@ -2,7 +2,7 @@
 
 require 'optparse'
 require 'methadone'
-require 'inventory.rb'
+require 'filentory.rb'
 
 class App
   include Methadone::Main
@@ -30,12 +30,12 @@ class App
 
   # Declare command-line interface here
 
-  description "A tool to create an inventory of a storage medium"
+  description "A tool to create an filentory-cli of a storage medium"
   
   # Options:
-  on("-t TYPE", "--type TYPE", "The type of the media to add to the inventory")
+  on("-t TYPE", "--type TYPE", "The type of the media to add to the filentory-cli")
 
-  # Arguments of Inventory
+  # Arguments of Filentory-cli
   arg :name # required argument
   arg :path 
   arg :server, :optional # optional argument
@@ -43,7 +43,7 @@ class App
   # # Make an argument optional
   # arg :optional_arg, :optional
 
-  version Inventory::VERSION
+  version Filentory::VERSION
 
   use_log_level_option
 
