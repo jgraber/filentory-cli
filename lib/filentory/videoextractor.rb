@@ -9,6 +9,7 @@ class VideoExtractor
     
     methods = define_fields
     methods.each{|m| result[m] = movie.send(m)}
+    add_creation_time(movie, result)
 
     result.delete_if { |k, v| v.nil? || v.to_s.empty?}
   end
@@ -26,7 +27,6 @@ class VideoExtractor
      "audio_stream",
      "bitrate",
      "colorspace",
-     "creation_time",
      "dar",
      "duration",
      "resolution",
@@ -39,4 +39,12 @@ class VideoExtractor
      "valid?"]
   end
 
+  def add_creation_time(movie, result)
+    created = movie.send("creation_time")
+    result["creation_time"] = format_date(created)
+  end
+
+  def format_date(date)
+    date.strftime("%FT%T+00:00") unless date.nil?
+  end
 end

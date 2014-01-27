@@ -44,6 +44,7 @@ Then(/^the video file should have metadata$/) do
   steps %q{
     And the JSON at "files/0/3/metadata" should be a hash
     And the JSON at "files/0/3/metadata/audio_codec" should be "aac"
+    And the JSON at "files/0/3/metadata/creation_time" should be "2014-01-09T14:21:30+00:00"
   }
 end
 
