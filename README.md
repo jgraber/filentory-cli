@@ -1,6 +1,6 @@
 # Filentory-cli [![Build Status](https://travis-ci.org/jgraber/filentory-cli.png?branch=master)](https://travis-ci.org/jgraber/filentory-cli) [![Code Climate](https://codeclimate.com/github/jgraber/filentory-cli.png)](https://codeclimate.com/github/jgraber/filentory-cli) [![Gem Version](https://badge.fury.io/rb/filentory-cli.png)](http://badge.fury.io/rb/filentory-cli)
 
-A tool to create an filentory-cli of a storage medium.
+A tool to create an inventory of a storage medium.
 
 ## Installation
 
