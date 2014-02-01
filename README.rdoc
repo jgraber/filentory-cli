@@ -1,18 +1,18 @@
 = filentory-cli - DESCRIBE YOUR GEM
 
-Author::  YOUR NAME (YOUR EMAIL)
-Copyright:: Copyright (c) 2014 YOUR NAME
+Author::  Johnny Graber (JG@JGraber.ch)
+Copyright:: Copyright (c) 2014 Johnny Graber
 
-
-DESCRIBE YOUR GEM HERE
+A tool to create an inventory of a storage medium.
 
 == Links
 
-* {Source on Github}[LINK TO GITHUB]
+* {Source on Github}[https://github.com/jgraber/filentory-cli]
 * RDoc[LINK TO RDOC.INFO]
 
 == Install
-
+    $ gem install filentory-cli
+    
 == Examples
 
 == Contributing
