@@ -8,12 +8,16 @@ A tool to create an inventory of a storage medium.
 == Links
 
 * {Source on Github}[https://github.com/jgraber/filentory-cli]
-* RDoc[LINK TO RDOC.INFO]
+* RDoc[http://rdoc.info/github/jgraber/filentory-cli/frames]
 
 == Install
     $ gem install filentory-cli
-    
+
 == Examples
 
 == Contributing
-
+1. Fork it
+2. Create your feature branch (`git checkout -b my-new-feature`)
+3. Commit your changes (`git commit -am 'Add some feature'`)
+4. Push to the branch (`git push origin my-new-feature`)
+5. Create new Pull Request
