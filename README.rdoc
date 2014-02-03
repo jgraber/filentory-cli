@@ -1,4 +1,4 @@
-= filentory-cli - DESCRIBE YOUR GEM
+= filentory-cli - A tool to create an inventory of a storage medium
 
 Author::  Johnny Graber (JG@JGraber.ch)
 Copyright:: Copyright (c) 2014 Johnny Graber
