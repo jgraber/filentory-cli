@@ -8,7 +8,7 @@ Gem::Specification.new do |gem|
   gem.version       = Filentory::VERSION
   gem.authors       = ["Johnny Graber"]
   gem.email         = ["jg@jgraber.ch"]
-  gem.description   = "A tool to create an filentory-cli of a storage medium"
+  gem.description   = "A tool to create an inventory of a storage medium"
   gem.summary       = "Filentory-cli is a first step to get order in a chaotic collection of storage medias."
   gem.homepage      = "https://github.com/jgraber/filentory-cli"
 
