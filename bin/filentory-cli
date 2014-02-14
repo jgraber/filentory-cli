@@ -13,10 +13,10 @@ class App
     info("name: #{name}")
     info "path: #{absolute_path}"
     info "server: #{server}"
-    info "type: #{options[:type]}"
+    info "mediatype: #{options[:type]}"
 
     data_store = Datastore.new (name)
-    data_store.type = options[:type]
+    data_store.mediatype = options[:type]
     collector = Collector.new
     data_store.files << collector.collect(absolute_path)
 

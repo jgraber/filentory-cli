@@ -6,7 +6,7 @@ end
 Then(/^I should get JSON as output$/) do
   @output.should have_json_path("name")
   @output.should have_json_path("files")
-  @output.should have_json_path("type")
+  @output.should have_json_path("mediatype")
 end
 
 Then(/^the "(.*?)" should be "(.*?)"$/) do |key, value|

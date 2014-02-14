@@ -10,9 +10,9 @@ class TestDatastore < Test::Unit::TestCase
 
   def test_can_set_a_type
     ds = Datastore.new("")
-    ds.type= "DVD"
+    ds.mediatype= "DVD"
 
-    assert_equal("DVD", ds.type)
+    assert_equal("DVD", ds.mediatype)
   end
 
   def test_can_add_array_of_files

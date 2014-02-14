@@ -21,7 +21,7 @@ Feature: My bootstrapped app kinda works
     When I run "filentory-cli" for the test data
     Then I should get JSON as output
     And the "name" should be "testrun"
-    And the "type" should be "DVD"
+    And the "mediatype" should be "DVD"
     And there should be 4 entries in "files"
     And the first file should be placed in the root folder
     And the second file should be in the "folder"

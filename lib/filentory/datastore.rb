@@ -1,7 +1,7 @@
 require 'oj'
 
 class Datastore
-  attr_accessor :name, :type, :files
+  attr_accessor :name, :mediatype, :files
 
   def initialize(name)
     @name = name
