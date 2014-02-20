@@ -3,6 +3,7 @@ require 'xmp'
 
 class ExifExtractor
 
+  # Extracts the metadata of a file at a given path in the file system.
   def metadata_for_file(file_path)
     img = EXIFR::JPEG.new(file_path)
 
@@ -17,6 +18,8 @@ class ExifExtractor
     Hash.new
   end
 
+  # Check if ExifExtractor handles the file extension.
+  # Example: ExifExtractor.handles? ".jpg" => returns true
   def self.handles?(file_extension)
     [".jpg", ".jpeg", ".tiff"].include? file_extension
   end

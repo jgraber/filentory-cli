@@ -18,7 +18,23 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+    $ filentory-cli --log-level fatal "demo" .
+     {
+     "^o":"Datastore",
+     "name":"demo",
+     "files":[
+       [
+         {
+           "^o":"FileEntry",
+           "path":".",
+           "name":"50quickideas.pdf",
+           "last_modified":"2014-01-01T18:06:12+01:00",
+           "size":49447,
+           "checksum":"348a5b72877dcb5e0354f8eef62e5ff4e546043881dd051b9f8c2dea6ab23bb7"
+         }
+       ]
+     }
+
 
 ## Contributing
 

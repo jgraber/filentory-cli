@@ -2,6 +2,7 @@ require 'streamio-ffmpeg'
 
 class VideoExtractor
 
+  # Extracts the metadata of a file at a given path in the file system.
   def metadata_for_file(file_path)
     movie = FFMPEG::Movie.new(file_path)
     
@@ -14,6 +15,8 @@ class VideoExtractor
     result.delete_if { |k, v| v.nil? || v.to_s.empty?}
   end
 
+  # Check if VideoExtractor handles the file extension.
+  # Example: VideoExtractor.handles? ".mov" => returns true
   def self.handles?(file_extension)
     [".avi", ".mpeg", ".mov", ".mp4", ".flv"].include? file_extension
   end
