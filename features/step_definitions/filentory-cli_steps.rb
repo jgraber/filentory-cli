@@ -48,6 +48,23 @@ Then(/^the video file should have metadata$/) do
   }
 end
 
+When(/^I run "(.*?)" with a server parameter$/) do |arg1|
+  FakeWeb.register_uri(:post, "http://jgraber.ch/ok", :body => "OK")
+  @output_send_ok = `filentory-cli "testrun" test/integration/data http://jgraber.ch/ok -t DVD --log-level fatal`
+end
+
+Then(/^I should get a message that the data was send successfully$/) do
+  @output_send_ok.should include "successfull"
+end
+
+When(/^I run "(.*?)" with the wrong server parameter$/) do |arg1|
+  @output_send_ok = `filentory-cli "testrun" test/integration/data http://localhost:5555 -t DVD --log-level fatal`
+end
+
+Then(/^I should get a message that the data could not be sent$/) do
+  @output_send_ok.should include "failed"
+end
+
     
 
 def last_json

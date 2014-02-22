@@ -1,8 +1,5 @@
-Feature: My bootstrapped app kinda works
-  In order to get going on coding my awesome app
-  I want to have aruba and cucumber setup
-  So I don't have to do it myself
-
+Feature: Filentory-cli works
+  
   Scenario: App just runs
     When I get help for "filentory-cli"
     Then the exit status should be 0
@@ -28,3 +25,7 @@ Feature: My bootstrapped app kinda works
     And the image file should have metadata
     And the video file should have metadata
     
+
+  Scenario: Server does not exist
+    When I run "filentory-cli" with the wrong server parameter
+    Then I should get a message that the data could not be sent

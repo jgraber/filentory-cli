@@ -3,6 +3,8 @@
 require 'optparse'
 require 'methadone'
 require 'filentory.rb'
+#require 'filentory/sender.rb'
+#require 'uri'
 
 class App
   include Methadone::Main
@@ -20,10 +22,23 @@ class App
     collector = Collector.new
     data_store.files << collector.collect(absolute_path)
 
-    puts data_store.to_json
-    # your program code here
-    # You can access CLI options via
-    # the options Hash
+    begin
+    if server.nil?
+      puts data_store.to_json
+    else
+      sender = Sender.new(server)
+      response = sender.post(data_store.to_json)
+
+      if(sender.failed?)
+        puts "ERROR: sending to '#{server}' failed: #{response.code} - #{response.message}"
+      else
+        puts "Sending '#{name}' to '#{server}' was successfull."
+      end
+    end
+
+    rescue => exeption_detected
+      puts "Error: #{exeption_detected}"
+    end
   end
 
   # supplemental methods here
