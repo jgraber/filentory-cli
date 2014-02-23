@@ -59,6 +59,28 @@ class TestSender < Test::Unit::TestCase
     assert_equal(true, sender.failed?)
   end
 
+  def test_other_name_for_datafield
+    url = prepare("http://localhost/board", "send back")
+
+    sender = Sender.new(url)
+    sender.datafield_name = "my_own_fieldname"
+    sender.post("a small message.")
+
+    request = FakeWeb.last_request 
+    assert_equal("my_own_fieldname=a small message.".gsub(" ", "+"), request.body)
+  end
+
+  def test_add_other_fields
+    url = prepare("http://localhost/board", "send back")
+
+    sender = Sender.new(url)
+    sender.additional_fields = {"a" => "JG"}
+    sender.post("a small message.")
+
+    request = FakeWeb.last_request 
+    assert_equal("data=a small message.&a=JG".gsub(" ", "+"), request.body)
+  end
+
   private
   def prepare(url, response)
     FakeWeb.register_uri(:post, url, :body => response)
