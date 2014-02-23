@@ -25,6 +25,9 @@ Feature: Filentory-cli works
     And the image file should have metadata
     And the video file should have metadata
     
+  Scenario: Sending data to server
+    When I run "filentory-cli" with a server parameter
+    Then I should get a message that the data was send successfully
 
   Scenario: Server does not exist
     When I run "filentory-cli" with the wrong server parameter

@@ -43,3 +43,7 @@ Or install it yourself as:
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
+
+## Testing
+Start the minimal web service as a endpoint to send data with this command:
+    $rackup features/support/config.ru
