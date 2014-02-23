@@ -1,5 +1,7 @@
 language: ruby
-before_script: "sudo apt-get update && sudo apt-get install -qq ffmpeg"
+before_script: 
+  - "sudo apt-get update && sudo apt-get install -qq ffmpeg"
+  - "rackup features/support/config.ru"
 rvm:
   - 2.0.0
   - 1.9.3
