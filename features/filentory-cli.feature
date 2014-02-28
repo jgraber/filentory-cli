@@ -9,6 +9,7 @@ Feature: Filentory-cli works
     And the following options should be documented:
       |--version|
       |--type|
+      |--auth|
     And the banner should document that this app's arguments are:
       |name||
       |path||
@@ -28,6 +29,11 @@ Feature: Filentory-cli works
   Scenario: Sending data to server
     When I run "filentory-cli" with a server parameter
     Then I should get a message that the data was send successfully
+
+  Scenario: YAML file present while sending data to server
+    When I run "filentory-cli" with a server parameter and a yaml file
+    Then I should get a message that the data was send successfully
+    And I should get a message that "mykey" was send with the JSON data
 
   Scenario: Server does not exist
     When I run "filentory-cli" with the wrong server parameter

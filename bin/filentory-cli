@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
-
+require 'yaml'
 require 'optparse'
 require 'methadone'
 require 'filentory.rb'
@@ -21,12 +21,22 @@ class App
     data_store.mediatype = options[:type]
     collector = Collector.new
     data_store.files << collector.collect(absolute_path)
-
+    
     begin
     if server.nil?
       puts data_store.to_json
     else
+
+      begin
+        config_path = options[:auth] || File.join(ENV['HOME'], '.filentory.yaml')
+        auth_data = YAML.load_file(config_path)
+        auth_data.keys.each {|key| puts "will send #{key}"}
+      rescue
+        auth_data = nil
+      end
+
       sender = Sender.new(server)
+      sender.additional_fields = auth_data
       response = sender.post(data_store.to_json)
 
       if(sender.failed?)
@@ -49,6 +59,7 @@ class App
   
   # Options:
   on("-t TYPE", "--type TYPE", "The type of the media to add to the filentory-cli")
+  on("-a FILE", "--auth FILE", "A path to a YAML file with authentication information")
 
   # Arguments of Filentory-cli
   arg :name # required argument

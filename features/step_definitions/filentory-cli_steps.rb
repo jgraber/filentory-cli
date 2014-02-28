@@ -64,7 +64,13 @@ Then(/^I should get a message that the data could not be sent$/) do
   @output_send_ok.should include "failed"
 end
 
-    
+When(/^I run "(.*?)" with a server parameter and a yaml file$/) do |arg1|
+  @output_send_ok = `filentory-cli "testrun" test/integration/data http://localhost:9292/ok -t DVD --log-level fatal --auth features/support/auth.yaml`
+end
+
+Then(/^I should get a message that "(.*?)" was send with the JSON data$/) do |value|
+  @output_send_ok.should include value
+end
 
 def last_json
   @output
