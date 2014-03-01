@@ -9,6 +9,7 @@ class DemoServer
       	keys = []
       	req.params.each_key {|key| keys << key }
       	str = keys.join(" ")
+        puts keys
       	res.write str
       else
       	res.status = 404
