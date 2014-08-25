@@ -35,7 +35,7 @@ class TestFileEntry < Test::Unit::TestCase
 
     json = Oj::dump fe, :indent => 2
 
-    assert_equal(json_compact.strip, json)
+    assert_equal(json_compact.strip, json.strip)
   end
 
   def test_to_s_is_readable
