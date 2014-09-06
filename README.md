@@ -46,4 +46,5 @@ Or install it yourself as:
 
 ## Testing
 Start the minimal web service as a endpoint to send data with this command:
+    
     $rackup features/support/config.ru
