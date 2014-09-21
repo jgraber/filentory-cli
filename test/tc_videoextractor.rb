@@ -1,8 +1,8 @@
-require 'test/unit'
+require 'minitest/autorun'
 require 'pathname'
 require 'filentory/videoextractor'
 
-class TestVideoExtractor < Test::Unit::TestCase
+class TestVideoExtractor < Minitest::Test
 
   def test_can_extract_metadata
     extractor = VideoExtractor.new

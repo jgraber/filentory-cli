@@ -1,7 +1,7 @@
-require 'test/unit'
+require 'minitest/autorun'
 require 'filentory/datastore'
 
-class TestDatastore < Test::Unit::TestCase
+class TestDatastore < Minitest::Test
   def test_initialisation_with_a_name 
     ds = Datastore.new("a name")
 

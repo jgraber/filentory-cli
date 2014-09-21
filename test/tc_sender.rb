@@ -1,9 +1,9 @@
-require 'test/unit'
+require 'minitest/autorun'
 require 'uri'
 require 'fakeweb'
 require 'filentory/sender'
 
-class TestSender < Test::Unit::TestCase
+class TestSender < Minitest::Test
 
   def setup
   end

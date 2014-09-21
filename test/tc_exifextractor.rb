@@ -1,8 +1,8 @@
-require 'test/unit'
+require "minitest/autorun"
 require 'pathname'
 require 'filentory/exifextractor'
 
-class TestExifExtractor < Test::Unit::TestCase
+class TestExifExtractor < Minitest::Test
 
   def test_can_extract_metadata
     extractor = ExifExtractor.new

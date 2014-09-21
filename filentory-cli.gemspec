@@ -22,6 +22,7 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency('fakeweb', '~> 1.3')
   gem.add_development_dependency('rack', '~>1.5.2')
   gem.add_development_dependency('rack-test', '~> 0.6.2')
+  gem.add_development_dependency('minitest', '~> 4.0')
   gem.add_dependency('methadone', '~> 1.7')
   gem.add_dependency('oj', '~> 2.10.2')
   gem.add_dependency('json_spec', '~> 1.1.1')

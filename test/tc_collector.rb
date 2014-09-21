@@ -1,8 +1,8 @@
-require 'test/unit'
+require 'minitest/autorun'
 require 'pathname'
 require 'filentory/collector'
 
-class TestCollector < Test::Unit::TestCase
+class TestCollector < Minitest::Test
 
   def test_collector_finds_files
     col = Collector.new

@@ -1,10 +1,10 @@
-require 'test/unit'
+require 'minitest/autorun'
 require 'date'
 require 'oj'
 require 'filentory/fileentry'
 
 
-class TestFileEntry < Test::Unit::TestCase
+class TestFileEntry < Minitest::Test
 
   def test_initialisation_with_a_path_and_a_name 
     fe = FileEntry.new("/media/","a name")

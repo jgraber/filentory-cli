@@ -1,6 +1,6 @@
-require 'test/unit'
+require 'minitest/autorun'
 
-class TestSomething < Test::Unit::TestCase
+class TestSomething < Minitest::Test
   def test_truth
     assert true
   end
