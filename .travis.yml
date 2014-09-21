@@ -14,3 +14,4 @@ matrix:
     - rvm: jruby-head
     - rvm: jruby-19mode
     - rvm: rbx-2.2.3
+    - rvm: 1.9.3
