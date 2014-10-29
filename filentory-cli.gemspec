@@ -26,7 +26,7 @@ Gem::Specification.new do |gem|
   gem.add_dependency('methadone', '~> 1.7')
   gem.add_dependency('oj', '~> 2.10.2')
   gem.add_dependency('json_spec', '~> 1.1.1')
-  gem.add_dependency('exifr', '~> 1.1.3')
+  gem.add_dependency('exifr', '~> 1.2.0')
   gem.add_dependency('xmp', '~> 0.2.0')
   gem.add_dependency('streamio-ffmpeg', '~> 1.0.0')
 end
