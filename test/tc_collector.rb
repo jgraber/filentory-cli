@@ -1,3 +1,5 @@
+require File.expand_path '../test_helper.rb', __FILE__
+#require './test_helper.rb'
 require 'minitest/autorun'
 require 'pathname'
 require 'filentory/collector'

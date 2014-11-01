@@ -1,3 +1,4 @@
+require 'simplecov'
 require 'aruba/cucumber'
 require 'methadone/cucumber'
 require "json_spec/cucumber"
