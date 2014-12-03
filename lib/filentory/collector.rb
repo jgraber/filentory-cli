@@ -11,11 +11,15 @@ class Collector
     @pathname = Pathname.new(path)
 
     Find.find(path) do |file|
-      if File.directory?(file)
-        info "skipping #{file}"
-        next
+      begin
+        if File.directory?(file)
+          info "skipping #{file}"
+          next
+        end
+        result << extract_file_infos(file)
+      rescue => file_error
+        error ("error with file '#{path}': #{file}")
       end
-      result << extract_file_infos(file)
     end
 
     result
