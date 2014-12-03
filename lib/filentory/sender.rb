@@ -16,7 +16,14 @@ class Sender
 			if not @additional_fields.nil?
 				params.merge!(@additional_fields)
 			end
-			response = Net::HTTP.post_form(@url, params)
+			http = Net::HTTP.new(@url.host, @url.port)
+			http.read_timeout = 600
+			
+			request = Net::HTTP::Post.new(@url.request_uri)
+			request.set_form_data(params)
+
+			response = http.request(request)
+
 			@failed = !response.code.to_s.start_with?("2")
 		rescue => error_message
 			response = Net::HTTPResponse.new "ERROR", "400", error_message
