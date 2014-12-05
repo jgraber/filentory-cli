@@ -38,8 +38,8 @@ class VideoExtractor
      "video_codec",
      "video_stream",
      "width",
-     "height",
-     "valid?"]
+     "height"
+   ]
   end
 
   def add_creation_time(movie, result)
