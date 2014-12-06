@@ -31,7 +31,8 @@ class ExifExtractor
         namespace = xmp.send(namespace_name)
         namespace.attributes.each do |attr|
         begin
-        xmpValues["#{namespace_name}.#{attr}"] = namespace.send(attr)#.inspect
+        answer = namespace.send(attr)#.inspect
+        xmpValues["#{namespace_name}.#{attr}"] = answer.to_s
         rescue
         end
       end
