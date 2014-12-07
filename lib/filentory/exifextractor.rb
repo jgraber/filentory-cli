@@ -32,7 +32,7 @@ class ExifExtractor
         namespace.attributes.each do |attr|
         begin
         answer = namespace.send(attr)#.inspect
-        xmpValues["#{namespace_name}.#{attr}"] = answer.to_s
+        xmpValues["#{namespace_name}.#{attr}"] = answer.to_s[0..250]
         rescue
         end
       end
