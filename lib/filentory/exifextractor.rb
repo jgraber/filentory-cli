@@ -31,8 +31,9 @@ class ExifExtractor
         namespace = xmp.send(namespace_name)
         namespace.attributes.each do |attr|
         begin
-        answer = namespace.send(attr)#.inspect
-        xmpValues["#{namespace_name}.#{attr}"] = answer.to_s[0..250]
+        returnval = namespace.send(attr)#.inspect
+        answer = returnval.scrub("*")
+        xmpValues["#{namespace_name}.#{attr}"] = answer.strip.to_s[0..250]
         rescue
         end
       end
@@ -40,12 +41,12 @@ class ExifExtractor
   end
 
   def extract_exif_main_meta_data(img, xmpValues)
-    xmpValues["exif.model"] =  img.model
-    xmpValues["exif.artist"] = img.artist
-    xmpValues["exif.date_time"] = format_date(img.date_time)
-    xmpValues["exif.date_time_original"] = format_date(img.date_time_original)
-    xmpValues["exif.width"] = img.width
-    xmpValues["exif.height"] = img.height
+    xmpValues["exif.model"] =  img.model.scrub("*")
+    xmpValues["exif.artist"] = img.artist.scrub("*")
+    xmpValues["exif.date_time"] = format_date(img.date_time).scrub("*")
+    xmpValues["exif.date_time_original"] = format_date(img.date_time_original).scrub("*")
+    xmpValues["exif.width"] = img.width.scrub("*")
+    xmpValues["exif.height"] = img.height.scrub("*")
   end
 
 
