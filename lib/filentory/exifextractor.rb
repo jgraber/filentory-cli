@@ -31,10 +31,12 @@ class ExifExtractor
         namespace = xmp.send(namespace_name)
         namespace.attributes.each do |attr|
         begin
-        returnval = namespace.send(attr)#.inspect
-        answer = returnval.scrub("*")
-        xmpValues["#{namespace_name}.#{attr}"] = answer.strip.to_s[0..250]
-        rescue
+          returnval = namespace.send(attr)#.inspect
+          #puts "returnval: #{returnval}"
+          answer = returnval.scrub("*")
+          xmpValues["#{namespace_name}.#{attr}"] = answer.strip.to_s[0..250]
+        rescue #=> ex
+          #puts "====>#{ex}"
         end
       end
     end   
@@ -45,8 +47,8 @@ class ExifExtractor
     xmpValues["exif.artist"] = img.artist.scrub("*")
     xmpValues["exif.date_time"] = format_date(img.date_time).scrub("*")
     xmpValues["exif.date_time_original"] = format_date(img.date_time_original).scrub("*")
-    xmpValues["exif.width"] = img.width.scrub("*")
-    xmpValues["exif.height"] = img.height.scrub("*")
+    xmpValues["exif.width"] = img.width
+    xmpValues["exif.height"] = img.height
   end
 
 
