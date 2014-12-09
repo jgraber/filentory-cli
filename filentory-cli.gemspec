@@ -29,5 +29,6 @@ Gem::Specification.new do |gem|
   gem.add_dependency('exifr', '~> 1.2.0')
   gem.add_dependency('xmp', '~> 0.2.0')
   gem.add_dependency('streamio-ffmpeg', '~> 1.0.0')
+  gem.add_dependency('string-scrub')
   gem.add_development_dependency('simplecov', '~> 0.9.1')
 end
