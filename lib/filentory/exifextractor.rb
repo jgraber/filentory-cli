@@ -1,5 +1,6 @@
 require 'exifr'
 require 'xmp'
+require 'string-scrub'
 
 class ExifExtractor
 
