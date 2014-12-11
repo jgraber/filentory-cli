@@ -16,6 +16,7 @@ class ExifExtractor
 
     xmpValues.delete_if { |k, v| v.nil? || v.to_s.empty?}
   rescue => error
+    puts "metadata_for_file #{file_path} failed: #{error}"
     Hash.new
   end
 
@@ -36,20 +37,24 @@ class ExifExtractor
           #puts "returnval: #{returnval}"
           answer = returnval.scrub("*")
           xmpValues["#{namespace_name}.#{attr}"] = answer.strip.to_s[0..250]
-        rescue #=> ex
-          #puts "====>#{ex}"
+        rescue => error
+          #puts error
         end
       end
-    end   
+    end
+  rescue => error
+    #puts error
   end
 
   def extract_exif_main_meta_data(img, xmpValues)
-    xmpValues["exif.model"] =  img.model.scrub("*")
-    xmpValues["exif.artist"] = img.artist.scrub("*")
-    xmpValues["exif.date_time"] = format_date(img.date_time).scrub("*")
-    xmpValues["exif.date_time_original"] = format_date(img.date_time_original).scrub("*")
+    xmpValues["exif.model"] =  img.model.scrub("*").strip unless img.model.nil?
+    xmpValues["exif.artist"] = img.artist.force_encoding('UTF-8').scrub("*").strip.to_s[0..250]  unless img.artist.nil?
+    xmpValues["exif.date_time"] = format_date(img.date_time)
+    xmpValues["exif.date_time_original"] = format_date(img.date_time_original)
     xmpValues["exif.width"] = img.width
-    xmpValues["exif.height"] = img.height
+    xmpValues["exif.height"] = img.height 
+  rescue => error
+    #puts error
   end
 
 
@@ -63,5 +68,7 @@ class ExifExtractor
 
   def format_date(date)
     date.strftime("%FT%T+00:00") unless date.nil?
+  rescue
+      nil
   end
 end
