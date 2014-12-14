@@ -16,6 +16,10 @@ class Collector
           info "skipping #{file}"
           next
         end
+        if File.pipe?(file)
+          info "skippking pipe #{file}"
+          next
+        end
         result << extract_file_infos(file)
       rescue => file_error
         error ("error with file '#{path}': #{file}")
