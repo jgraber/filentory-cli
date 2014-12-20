@@ -17,7 +17,7 @@ class Sender
 				params.merge!(@additional_fields)
 			end
 			http = Net::HTTP.new(@url.host, @url.port)
-			http.read_timeout = 600
+			http.read_timeout = 6000
 			
 			request = Net::HTTP::Post.new(@url.request_uri)
 			request.set_form_data(params)
