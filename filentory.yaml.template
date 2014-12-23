@@ -1,0 +1,4 @@
+#replace the values and save this file as .filentory.yaml in your home directory
+
+token: <Your devise authentication token>
+user_email: <Your email address>
