@@ -23,6 +23,7 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency('rack', '~>1.5.2')
   gem.add_development_dependency('rack-test', '~> 0.6.2')
   gem.add_development_dependency('minitest')
+  gem.add_development_dependency('mkfifo')
   gem.add_dependency('methadone', '~> 1.7')
   gem.add_dependency('oj', '~> 2.11')
   gem.add_dependency('json_spec', '~> 1.1.1')
