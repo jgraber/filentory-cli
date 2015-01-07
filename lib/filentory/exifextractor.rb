@@ -36,7 +36,7 @@ class ExifExtractor
           returnval = namespace.send(attr)#.inspect
           #puts "returnval: #{returnval}"
           answer = returnval.scrub("*")
-          xmpValues["#{namespace_name}.#{attr}"] = answer.strip.to_s[0..250]
+          xmpValues["#{namespace_name}.#{attr}"] = answer.strip.to_s[0...250]
         rescue => error
           #puts error
         end
@@ -48,7 +48,8 @@ class ExifExtractor
 
   def extract_exif_main_meta_data(img, xmpValues)
     xmpValues["exif.model"] =  img.model.scrub("*").strip unless img.model.nil?
-    xmpValues["exif.artist"] = img.artist.force_encoding('UTF-8').scrub("*").strip.to_s[0..250]  unless img.artist.nil?
+    xmpValues["exif.make"] =  img.make.scrub("*").strip unless img.make.nil?
+    xmpValues["exif.artist"] = img.artist.force_encoding('UTF-8').scrub("*").strip.to_s[0...250]  unless img.artist.nil?
     xmpValues["exif.date_time"] = format_date(img.date_time)
     xmpValues["exif.date_time_original"] = format_date(img.date_time_original)
     xmpValues["exif.width"] = img.width
