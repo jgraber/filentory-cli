@@ -34,7 +34,7 @@ end
 Then(/^the image file should have metadata$/) do
   steps %Q{
     And the JSON at "files/0/2/metadata" should be a hash
-    And the JSON at "files/0/2/metadata" should have 6 entries
+    And the JSON at "files/0/2/metadata" should have 7 entries
     And the JSON at "files/0/2/metadata/exif.artist" should be "Johnny Graber"
     And the JSON at "files/0/2/metadata/exif.date_time" should be "2013-11-02T18:10:43+00:00"
   }
