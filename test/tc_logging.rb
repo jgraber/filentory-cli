@@ -12,7 +12,9 @@ class TestLogging < Minitest::Test
     @real_stderr = $stderr
     @real_stdout = $stdout
     $stderr = StringIO.new
+    $stderr.sync = true
     $stdout = StringIO.new
+    $stdout.sync = true
   end
 
   def teardown
@@ -28,7 +30,7 @@ class TestLogging < Minitest::Test
 		File.mkfifo(@pipe_path) unless File.exist?(@pipe_path)
 
   	col = Collector.new
-  	#col.logger = Logger.new($stdout)
+  	col.logger = Logger.new($stdout)
   	col.logger.level = Logger::DEBUG
     result = col.collect(File.dirname(__FILE__)+"/integration/special/")
 
