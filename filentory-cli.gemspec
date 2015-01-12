@@ -21,7 +21,7 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency('rake', '~> 10.3')
   gem.add_development_dependency('fakeweb', '~> 1.3')
   gem.add_development_dependency('rack', '~>1.6')
-  gem.add_development_dependency('rack-test', '~> 0.6.2')
+  gem.add_development_dependency('rack-test', '~> 0.6')
   gem.add_development_dependency('minitest')
   gem.add_development_dependency('mkfifo')
   gem.add_dependency('methadone', '~> 1.7')
