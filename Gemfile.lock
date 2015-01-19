@@ -13,7 +13,7 @@ PATH
 GEM
   remote: https://rubygems.org/
   specs:
-    aruba (0.6.1)
+    aruba (0.6.2)
       childprocess (>= 0.3.6)
       cucumber (>= 1.1.1)
       rspec-expectations (>= 2.7.0)
@@ -44,7 +44,7 @@ GEM
     multi_json (1.10.1)
     multi_test (0.1.1)
     nokogiri (1.5.11)
-    oj (2.11.2)
+    oj (2.11.3)
     rack (1.6.0)
     rack-test (0.6.3)
       rack (>= 1.0)
