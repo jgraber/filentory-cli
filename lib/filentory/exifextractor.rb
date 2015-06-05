@@ -47,9 +47,9 @@ class ExifExtractor
   end
 
   def extract_exif_main_meta_data(img, xmpValues)
-    xmpValues["exif.model"] =  img.model.scrub("*").strip unless img.model.nil?
-    xmpValues["exif.make"] =  img.make.scrub("*").strip unless img.make.nil?
-    xmpValues["exif.artist"] = img.artist.force_encoding('UTF-8').scrub("*").strip.to_s[0...250]  unless img.artist.nil?
+    xmpValues["exif.model"] = cleanup_metadata(img.model)
+    xmpValues["exif.make"] =  cleanup_metadata(img.make)
+    xmpValues["exif.artist"] = cleanup_description(img.artist)
     xmpValues["exif.date_time"] = format_date(img.date_time)
     xmpValues["exif.date_time_original"] = format_date(img.date_time_original)
     xmpValues["exif.width"] = img.width
@@ -58,6 +58,13 @@ class ExifExtractor
     #puts error
   end
 
+  def cleanup_metadata(value)
+    value.scrub("*").strip unless value.nil?
+  end
+
+  def cleanup_description(value)
+    cleanup_metadata(value.force_encoding('UTF-8')).to_s[0...250]  unless value.nil?
+  end
 
   def extract_gps_infos(img, xmpValues)
     if img.gps
