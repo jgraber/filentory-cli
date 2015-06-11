@@ -40,11 +40,11 @@ GEM
     json_spec (1.1.4)
       multi_json (~> 1.0)
       rspec (>= 2.0, < 4.0)
-    methadone (1.9.0)
+    methadone (1.9.1)
       bundler
     minitest (5.7.0)
     mkfifo (0.0.1)
-    multi_json (1.11.0)
+    multi_json (1.11.1)
     multi_test (0.1.2)
     nokogiri (1.5.11)
     oj (2.12.9)
