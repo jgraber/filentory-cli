@@ -68,9 +68,18 @@ class ExifExtractor
 
   def extract_gps_infos(img, xmpValues)
     if img.gps
-      xmpValues["exif.gps.latitude"] = img.gps.latitude
-      xmpValues["exif.gps.longitude"] = img.gps.longitude
-      xmpValues["exif.gps.altitude"] = img.gps.altitude
+      
+      if !img.gps.latitude.nan? then
+        xmpValues["exif.gps.latitude"] = img.gps.latitude
+      end
+
+      if !img.gps.longitude.nan? then
+        xmpValues["exif.gps.longitude"] = img.gps.longitude
+      end
+      
+      if !img.gps.altitude.nan? then
+        xmpValues["exif.gps.altitude"] = img.gps.altitude
+      end
     end
   end
 
