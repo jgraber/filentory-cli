@@ -47,8 +47,8 @@ class ExifExtractor
   end
 
   def extract_exif_main_meta_data(img, xmpValues)
-    xmpValues["exif.model"] = cleanup_metadata(img.model)
-    xmpValues["exif.make"] =  cleanup_metadata(img.make)
+    xmpValues["exif.model"] = cleanup_description(img.model)
+    xmpValues["exif.make"] =  cleanup_description(img.make)
     xmpValues["exif.artist"] = cleanup_description(img.artist)
     xmpValues["exif.date_time"] = format_date(img.date_time)
     xmpValues["exif.date_time_original"] = format_date(img.date_time_original)
