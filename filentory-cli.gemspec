@@ -11,6 +11,7 @@ Gem::Specification.new do |gem|
   gem.description   = "A tool to create an inventory of a storage medium"
   gem.summary       = "Filentory-cli is a first step to get order in a chaotic collection of storage medias."
   gem.homepage      = "https://github.com/jgraber/filentory-cli"
+  gem.license       = 'Apache License, Version 2.0'
 
   gem.files         = `git ls-files`.split($/)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
