@@ -19,7 +19,7 @@ Gem::Specification.new do |gem|
   gem.require_paths = ["lib"]
   gem.add_development_dependency('rdoc')
   gem.add_development_dependency('aruba')
-  gem.add_development_dependency('rake', '~> 10.3')
+  gem.add_development_dependency('rake', '~> 11.1')
   gem.add_development_dependency('fakeweb', '~> 1.3')
   gem.add_development_dependency('rack', '~>1.6.1')
   gem.add_development_dependency('rack-test', '~> 0.6')
@@ -30,7 +30,7 @@ Gem::Specification.new do |gem|
   gem.add_dependency('json_spec', '~> 1.1.1')
   gem.add_dependency('exifr', '~> 1.2.0')
   gem.add_dependency('xmp', '~> 0.2.0')
-  gem.add_dependency('streamio-ffmpeg', '~> 1.0.0')
+  gem.add_dependency('streamio-ffmpeg', '~> 2.0.0')
   gem.add_dependency('string-scrub')
-  gem.add_development_dependency('simplecov', '~> 0.10.0')
+  gem.add_development_dependency('simplecov', '~> 0.11.2')
 end
