@@ -1,7 +1,7 @@
 language: ruby
 before_script: 
-  - "sudo apt-get update && sudo apt-get install -qq ffmpeg"
-# Ubuntu 14.4:  - "sudo apt-get install -qq libav-tools && sudo ln /usr/bin/avconv /usr/bin/ffmpeg"
+# Ubuntu 12.4:  - "sudo apt-get update && sudo apt-get install -qq ffmpeg"
+  - "sudo apt-get install -qq libav-tools && sudo ln /usr/bin/avconv /usr/bin/ffmpeg"
   - "bundle exec rackup features/support/config.ru &"
 rvm:
   - 2.0.0
