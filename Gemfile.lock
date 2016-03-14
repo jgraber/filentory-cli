@@ -56,7 +56,7 @@ GEM
     rack (1.6.4)
     rack-test (0.6.3)
       rack (>= 1.0)
-    rake (11.1.0)
+    rake (10.5.0)
     rdoc (4.2.2)
       json (~> 1.4)
     rspec (3.4.0)
@@ -95,7 +95,7 @@ DEPENDENCIES
   mkfifo
   rack (~> 1.6.1)
   rack-test (~> 0.6)
-  rake (~> 11.1)
+  rake (~> 10.3)
   rdoc
   simplecov (~> 0.11.2)
 
