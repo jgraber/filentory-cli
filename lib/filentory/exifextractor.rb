@@ -30,13 +30,13 @@ class ExifExtractor
     xmp = XMP.parse(img)
     xmp.namespaces.each do |namespace_name|
       namespace = xmp.send(namespace_name)
-      extract_namespace_attributes(namespace, xmpValues)
-    end
+      extract_namespace_attributes(namespace_name, namespace, xmpValues)
+  end
   rescue => error
     #puts error
   end
 
-  def extract_namespace_attributes(namespace, xmpValues)
+  def extract_namespace_attributes(namespace_name, namespace, xmpValues)
     namespace.attributes.each do |attr|
       begin
         returnval = namespace.send(attr)#.inspect
