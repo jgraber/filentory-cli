@@ -29,20 +29,24 @@ class ExifExtractor
   def extract_xmp_meta_data(img, xmpValues)
     xmp = XMP.parse(img)
     xmp.namespaces.each do |namespace_name|
-        namespace = xmp.send(namespace_name)
-        namespace.attributes.each do |attr|
-        begin
-          returnval = namespace.send(attr)#.inspect
-          #puts "returnval: #{returnval}"
-          answer = returnval.scrub("*")
-          xmpValues["#{namespace_name}.#{attr}"] = answer.strip.to_s[0...250]
-        rescue => error
-          #puts error
-        end
-      end
+      namespace = xmp.send(namespace_name)
+      extract_namespace_attributes(namespace, xmpValues)
     end
   rescue => error
     #puts error
+  end
+
+  def extract_namespace_attributes(namespace, xmpValues)
+    namespace.attributes.each do |attr|
+      begin
+        returnval = namespace.send(attr)#.inspect
+        #puts "returnval: #{returnval}"
+        answer = returnval.scrub("*")
+        xmpValues["#{namespace_name}.#{attr}"] = answer.strip.to_s[0...250]
+      rescue => error
+        #puts error
+      end
+    end
   end
 
   def extract_exif_main_meta_data(img, xmpValues)
