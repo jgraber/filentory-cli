@@ -71,18 +71,17 @@ class ExifExtractor
 
   def extract_gps_infos(img, xmpValues)
     if img.gps
+      assing_value_when_field_is_set(img.gps, :latitude, "exif.gps.latitude", xmpValues)
       
-      if !img.gps.latitude.nil? && !img.gps.latitude.nan? then
-        xmpValues["exif.gps.latitude"] = img.gps.latitude
-      end
+      assing_value_when_field_is_set(img.gps, :longitude, "exif.gps.longitude", xmpValues)
+      
+      assing_value_when_field_is_set(img.gps, :altitude, "exif.gps.altitude", xmpValues)
+    end
+  end
 
-      if !img.gps.longitude.nil? && !img.gps.longitude.nan? then
-        xmpValues["exif.gps.longitude"] = img.gps.longitude
-      end
-      
-      if !img.gps.altitude.nil? && !img.gps.altitude.nan? then
-        xmpValues["exif.gps.altitude"] = img.gps.altitude
-      end
+  def assing_value_when_field_is_set(img, method, key_in_array, xmpValues)
+    if !img.send(method).nil? && !img.send(method).nan?
+      xmpValues[key_in_array] = img.send(method)
     end
   end
 
