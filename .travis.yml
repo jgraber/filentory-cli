@@ -6,7 +6,7 @@ before_script:
 rvm:
   - 2.1.8
   - 2.2.3
-  - 2.2.5§
+  - 2.2.5
 #matrix:
 #  allow_failures:
 #    - rvm: 1.9.3
