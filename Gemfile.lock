@@ -37,7 +37,6 @@ GEM
     diff-lcs (1.2.5)
     docile (1.1.5)
     exifr (1.2.4)
-    fakeweb (1.3.0)
     ffi (1.9.10)
     gherkin (3.2.0)
     json (1.8.3)
@@ -86,7 +85,6 @@ PLATFORMS
 
 DEPENDENCIES
   aruba
-  fakeweb (~> 1.3)
   filentory-cli!
   minitest
   mkfifo
@@ -97,4 +95,4 @@ DEPENDENCIES
   simplecov (~> 0.11.2)
 
 BUNDLED WITH
-   1.10.6
+   1.12.3
