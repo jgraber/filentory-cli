@@ -1,8 +1,7 @@
 require 'simplecov'
 require 'aruba/cucumber'
 require 'methadone/cucumber'
-require "json_spec/cucumber"
-require 'fakeweb'
+require 'json_spec/cucumber'
 
 PROJECT_ROOT = File.join(File.dirname(__FILE__),'..','..')
 ENV['PATH'] = "#{File.join(PROJECT_ROOT,'bin')}#{File::PATH_SEPARATOR}#{ENV['PATH']}"
