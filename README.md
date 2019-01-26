@@ -36,6 +36,7 @@ Or install it yourself as:
      }
 
 To run the local Gem you are developing:
+
     $ ruby -Ilib bin/filentory-cli  --log-level fatal "demo" . 
 
 ## Contributing
