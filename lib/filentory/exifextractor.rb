@@ -1,7 +1,8 @@
 require 'exifr/jpeg'
 require 'xmp'
+require 'methadone'
 
-class ExifExtractor
+class ExifExtractor include Methadone::CLILogging
 
   # Extracts the metadata of a file at a given path in the file system.
   def metadata_for_file(file_path)
@@ -32,8 +33,8 @@ class ExifExtractor
       namespace = xmp.send(namespace_name)
       extract_namespace_attributes(namespace_name, namespace, xmpValues)
   end
-  rescue => error
-    #puts error
+  rescue => error_message
+    error ("#{error_message}") 
   end
 
   def extract_namespace_attributes(namespace_name, namespace, xmpValues)
@@ -43,8 +44,8 @@ class ExifExtractor
         #puts "returnval: #{returnval}"
         answer = returnval.scrub("*")
         xmpValues["#{namespace_name}.#{attr}"] = answer.strip.to_s[0...250]
-      rescue => error
-        #puts error
+      rescue => error_message
+         error ("#{error_message}")
       end
     end
   end
@@ -57,8 +58,8 @@ class ExifExtractor
     xmpValues["exif.date_time_original"] = format_date(img.date_time_original)
     xmpValues["exif.width"] = img.width
     xmpValues["exif.height"] = img.height 
-  rescue => error
-    #puts error
+  rescue => error_message
+     error ("#{error_message}")
   end
 
   def cleanup_metadata(value)

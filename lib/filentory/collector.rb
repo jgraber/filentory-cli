@@ -22,7 +22,7 @@ class Collector
         end
         result << extract_file_infos(file)
       rescue => file_error
-        error ("error with file '#{path}': #{file}")
+        error ("error with file '#{path}': #{file} => #{file_error}")
       end
     end
 
