@@ -1,3 +1,4 @@
+sudo: required
 dist: precise
 language: ruby
 before_script: 
@@ -5,10 +6,8 @@ before_script:
   - "sudo apt-get install -qq libav-tools" # && sudo ln /usr/bin/avconv /usr/bin/ffmpeg"
   - "bundle exec rackup features/support/config.ru &"
 rvm:
-  - 2.1.8
-  - 2.2.5
+  - 2.5.3
   - 2.6.0
-matrix:
-  allow_failures:
-    - rvm: 2.1.8
-    - rvm: 2.2.5
+#matrix:
+#  allow_failures:
+#    - rvm: 2.1.8
