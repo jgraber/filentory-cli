@@ -10,7 +10,7 @@ class TestVideoExtractor < Minitest::Test
     metadata = extractor.metadata_for_file(File.dirname(__FILE__)+"/integration/data/video.mov")
     
     assert_in_delta(2.18, metadata["duration"], 0.05)
-    assert_equal("568x320", metadata["resolution"])
+    assert_equal("320x568", metadata["resolution"])
   end
 
   def test_can_handle_avi
