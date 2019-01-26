@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    filentory-cli (0.5.0)
+    filentory-cli (0.6.0)
       exifr (~> 1.3.0)
       json_spec (~> 1.1.1)
       methadone (~> 2.0)
@@ -91,15 +91,15 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  aruba
+  aruba (~> 0.14)
   fakeweb (~> 1.3)
   filentory-cli!
-  minitest
-  mkfifo
+  minitest (~> 5.11)
+  mkfifo (~> 0.1)
   rack (~> 2.0.6)
   rack-test (~> 1.1)
   rake (~> 12.3)
-  rdoc
+  rdoc (~> 6.1)
   simplecov (~> 0.16)
 
 BUNDLED WITH
