@@ -35,6 +35,8 @@ Or install it yourself as:
        ]
      }
 
+To run the local Gem you are developing:
+    $ ruby -Ilib bin/filentory-cli  --log-level fatal "demo" . 
 
 ## Contributing
 
@@ -47,4 +49,4 @@ Or install it yourself as:
 ## Testing
 Start the minimal web service as a endpoint to send data with this command:
     
-    $rackup features/support/config.ru
+    $ rackup features/support/config.ru
