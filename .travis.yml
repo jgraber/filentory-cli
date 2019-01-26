@@ -1,5 +1,5 @@
 sudo: required
-dist: precise
+dist: xenial
 language: ruby
 before_script: 
 # Ubuntu 12.4:  - "sudo apt-get update && sudo apt-get install -qq ffmpeg"
