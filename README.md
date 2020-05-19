@@ -51,3 +51,6 @@ To run the local Gem you are developing:
 Start the minimal web service as a endpoint to send data with this command:
     
     $ rackup features/support/config.ru
+
+Then run 
+    $ rake
