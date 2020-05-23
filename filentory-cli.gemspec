@@ -21,7 +21,7 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency('aruba', '~> 0.14')
   gem.add_development_dependency('rake', '~> 13.0')
   gem.add_development_dependency('fakeweb', '~> 1.3')
-  gem.add_development_dependency('rack', '~> 2.0.6')
+  gem.add_development_dependency('rack', '~> 2.2')
   gem.add_development_dependency('rack-test', '~> 1.1')
   gem.add_development_dependency('minitest', '~> 5.11')
   gem.add_development_dependency('mkfifo', '~> 0.1')
