@@ -8,6 +8,8 @@ before_script:
 rvm:
   - 2.5.3
   - 2.6.0
+  - 3.0.0
 matrix:
   allow_failures:
     - rvm: 2.6.0
+    - rvm: 3.0.0
