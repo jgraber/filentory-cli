@@ -6,8 +6,8 @@ before_script:
   - "sudo apt-get install -qq libav-tools" # && sudo ln /usr/bin/avconv /usr/bin/ffmpeg"
   - "bundle exec rackup features/support/config.ru &"
 rvm:
-  - 2.5.3
   - 2.6.0
+  - 2.7.1
   - 3.0.0
 matrix:
   allow_failures:
