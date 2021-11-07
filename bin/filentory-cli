@@ -55,7 +55,7 @@ class App
 
   # Declare command-line interface here
 
-  description "A tool to create an filentory-cli of a storage medium"
+  description "A tool to create an inventory of a storage medium"
   
   # Options:
   on("-t TYPE", "--type TYPE", "The type of the media to add to the filentory-cli")
