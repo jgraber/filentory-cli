@@ -3,8 +3,6 @@ require 'yaml'
 require 'optparse'
 require 'methadone'
 require 'filentory.rb'
-#require 'filentory/sender.rb'
-#require 'uri'
 
 class App
   include Methadone::Main
