@@ -54,3 +54,8 @@ Start the minimal web service as a endpoint to send data with this command:
 
 Then run 
     $ rake
+
+## Publish
+    $ gem build filentory-cli.gemspec
+    
+    $ gem push filentory-cli-0.6.2.gem
